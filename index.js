@@ -17,7 +17,7 @@ console.log("Всем привет");
 const file1 = "cat.jpg";
 const file2 = "dog.png";
 // Хорошо:
-const files = ["cat.jpg", "dog.png", "document.pdf"];
+const files = ["cat.jpg", "dog.png", "Virus.exe", "document.pdf"];
 
 // Главные правила:
 // Индексы: Компьютеры считают с Нуля.
@@ -39,3 +39,44 @@ while (fuel > 0) {
     fuel -= 10; // fuel = fuel - 10;
 }
 console.log("Приехали");
+
+// for (старт; финиш; шаг);
+//устаревшая версия
+
+// for (let i = 0; i < files.length; i++) { //i = i + 1
+//     console.log(files[i]);
+// }
+
+// Выводит все элементы массива
+
+// Актуальная версия
+
+// for (const file of files) {
+//     console.log(file);
+// }
+
+// Тот же результат
+
+for (const file of files) {
+    if (file === "cat.jpg") {
+        console.log("Пропуская данную картинку");
+        continue;
+    }
+
+    if (file === "Virus.exe") {
+        console.log ("Вирус найден");
+        break;
+    }
+
+    console.log ("Файл проверен: " + file);
+}
+// Результат (без проверки с Virus.exe):
+// Пропускаем данную картинку
+// Файл проверен: dog.png
+// Файл проверен: Virus.exe
+// Файл проверен: document.pdf
+
+// Результат (с проверкой на вирус):
+// Пропускаем данную картинку
+// Файл проверен: dog.png
+// Вирус найден
